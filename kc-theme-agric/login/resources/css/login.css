@@ -1,0 +1,354 @@
+/* Agricultural Market Theme - Login Styles */
+
+:root {
+  --agri-green: #4a7c59;
+  --agri-green-dark: #3a5f45;
+  --agri-green-light: #6b9d7a;
+  --agri-earth: #8b7355;
+  --agri-sky: #87ceeb;
+  --agri-gold: #daa520;
+  --agri-cream: #faf8f3;
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+body {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: linear-gradient(
+    135deg,
+    var(--agri-sky) 0%,
+    var(--agri-green-light) 100%
+  );
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 20L35 30L30 40L25 30z' fill='%23ffffff' fill-opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+.login-pf {
+  background: transparent;
+  padding: 2rem 1rem;
+}
+
+.login-pf-page {
+  background: transparent;
+}
+
+#kc-container-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+#kc-header-wrapper {
+  display: none;
+}
+
+.card-pf {
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  border: none;
+  padding: 0;
+  max-width: 480px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#kc-form-wrapper::before {
+  content: "";
+  display: block;
+  height: 120px;
+  background: linear-gradient(
+    135deg,
+    var(--agri-green) 0%,
+    var(--agri-green-dark) 100%
+  );
+  position: relative;
+  margin: -2rem -2rem 2rem -2rem;
+}
+
+#kc-header {
+  text-align: center;
+  padding: 2rem 2rem 0 2rem;
+  position: relative;
+  z-index: 2;
+  margin-top: -100px;
+}
+
+#kc-header-wrapper .kc-logo-text {
+  background: white;
+  padding: 1rem 2rem;
+  border-radius: 12px;
+  display: inline-block;
+  box-shadow: var(--shadow-sm);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--agri-green);
+  margin: 0;
+}
+
+#kc-header-wrapper .kc-logo-text::before {
+  content: "🌾";
+  margin-right: 0.5rem;
+  font-size: 2rem;
+  vertical-align: middle;
+}
+
+#kc-content {
+  padding: 2rem;
+}
+
+#kc-form {
+  margin-top: 1.5rem;
+}
+
+#kc-form h1,
+#kc-page-title {
+  color: var(--agri-green-dark);
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--agri-green-dark);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
+  outline: none;
+  border-color: var(--agri-green);
+  box-shadow: 0 0 0 3px rgba(74, 124, 89, 0.1);
+}
+
+.btn-primary,
+#kc-form-buttons input[type="submit"],
+button[type="submit"] {
+  background: var(--agri-green);
+  border: none;
+  color: white;
+  padding: 0.875rem 2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover,
+#kc-form-buttons input[type="submit"]:hover,
+button[type="submit"]:hover {
+  background: var(--agri-green-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+#kc-form-options a,
+#kc-info a {
+  color: var(--agri-green);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+#kc-form-options a:hover,
+#kc-info a:hover {
+  color: var(--agri-green-dark);
+  text-decoration: underline;
+}
+
+.checkbox label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--agri-green);
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  border-left: 4px solid;
+}
+
+.alert-error {
+  background: #fee;
+  border-color: #c33;
+  color: #c33;
+}
+
+.alert-success {
+  background: #efe;
+  border-color: var(--agri-green);
+  color: var(--agri-green-dark);
+}
+
+.alert-warning {
+  background: #fff3cd;
+  border-color: var(--agri-gold);
+  color: #856404;
+}
+
+.alert-info {
+  background: #e7f3ff;
+  border-color: var(--agri-sky);
+  color: #004085;
+}
+
+#kc-registration {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.location-selector {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: var(--agri-cream);
+  border-radius: 8px;
+  border: 2px dashed var(--agri-green-light);
+}
+
+.location-selector h3 {
+  margin: 0 0 1rem 0;
+  color: var(--agri-green-dark);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.location-selector h3::before {
+  content: "📍";
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.map-preview {
+  height: 200px;
+  background: #e0e0e0;
+  border-radius: 8px;
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+#kc-info {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .card-pf {
+    margin: 1rem;
+  }
+
+  #kc-content {
+    padding: 1.5rem;
+  }
+
+  #kc-header-wrapper .kc-logo-text {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-overlay.active {
+  display: flex;
+}
+
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--agri-green);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
