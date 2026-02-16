@@ -38,7 +38,8 @@
   --radius: 0.625rem; /* 10px */
 }
 
-body {
+body,
+.login-pf body {
   font-family:
     "Inter",
     -apple-system,
@@ -48,11 +49,12 @@ body {
     "Helvetica Neue",
     Arial,
     sans-serif;
-  background-image: url("../img/dlt-v1.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: var(--dlt-foreground);
+  background-image: url("../img/dlt-v1.jpg") !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  color: var(--dlt-secondary);
   margin: 0;
   padding: 0;
   min-height: 100vh;
