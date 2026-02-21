@@ -15,7 +15,7 @@
 
 .pf-c-page__header-brand-link::before {
   content: "";
-  background-image: url("../img/logo.png");
+  background-image: url("../public/logo.png");
   background-size: contain;
   background-repeat: no-repeat;
   width: 32px;
