@@ -1,0 +1,30 @@
+:root {
+  /* Change primary color */
+  --pf-global--primary-color--100: #2e7d32;
+  --pf-global--primary-color--200: #1b5e20;
+
+  /* Change font */
+  --pf-global--FontFamily--sans-serif: "Inter", sans-serif;
+}
+
+/* Example: customize header */
+.pf-c-page__header-brand-link {
+  font-weight: bold;
+  color: #2e7d32 !important;
+}
+
+.pf-c-page__header-brand-link::before {
+  content: "";
+  background-image: url("../img/logo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* Example: hide Keycloak logo */
+.pf-c-brand {
+  display: none !important;
+}
