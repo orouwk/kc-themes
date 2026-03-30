@@ -6,212 +6,80 @@
   /* DLT Web Design Tokens */
   --dlt-background: #fafaf9; /* Stone-50 */
   --dlt-foreground: #1c1917; /* Stone-900 */
-
-  --dlt-card: #ffffff;
-  --dlt-card-foreground: #1c1917;
-
   --dlt-primary: #10b981; /* Emerald-500 */
-  --dlt-primary-foreground: #ffffff;
-  --dlt-primary-hover: #059669; /* Emerald-600 */
-
-  --dlt-secondary: #f5f5f4; /* Stone-100 */
-  --dlt-secondary-foreground: #1c1917;
-
-  --dlt-muted: #f5f5f4;
-  --dlt-muted-foreground: #78716c; /* Stone-500 */
-
-  --dlt-accent: #f5f5f4;
-  --dlt-accent-foreground: #1c1917;
-
-  --dlt-destructive: #ef4444; /* Red-500 */
-  --dlt-destructive-foreground: #fafafa;
-
   --dlt-border: #e7e5e4; /* Stone-200 */
-  --dlt-input: #e7e5e4;
-  --dlt-ring: #10b981;
-
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg:
-    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.05);
-
-  --radius: 0.625rem; /* 10px */
+  --radius: 0.75rem;
 }
 
-body,
-.login-pf body {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif !important;
+/* Global reset and background */
+html, body, .login-pf body {
+  font-family: 'Inter', sans-serif !important;
   background-image: url("../img/dlt-v2.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
-  background-repeat: no-repeat !important;
   background-attachment: fixed !important;
-  color: var(--dlt-foreground);
   margin: 0;
   padding: 0;
-  min-height: 100vh;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
 }
 
-/* CSS Connectivity Test - Bright border on logo area */
-#kc-header-wrapper {
-  border-bottom: 3px solid var(--dlt-primary) !important;
-  padding-bottom: 0.5rem !important;
-}
-
-/* Main Container */
-#kc-container-wrapper {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-}
-
-/* Card Styling */
-.card-pf, #kc-content {
-  background-color: var(--dlt-card) !important;
-  color: var(--dlt-card-foreground) !important;
+/* NUCLEAR TEST: If the CSS is working, the main card MUST have a gold border */
+.pf-v5-c-login__main, .pf-c-login__main, #kc-content, .card-pf {
+  border: 10px solid #f59e0b !important; /* Amber-500 / Gold */
+  background: white !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
   border-radius: var(--radius) !important;
-  border: 1px solid var(--dlt-border) !important;
-  box-shadow: var(--shadow-lg) !important;
-  padding: 2.5rem !important;
-  width: 100% !important;
-  max-width: 500px !important;
-  overflow: hidden;
+  padding: 3rem !important;
 }
 
-/* Page Title (e.g. "Sign in to your account") */
-#kc-page-title, .pf-c-title {
-  font-size: 1.75rem !important;
-  font-weight: 800 !important;
-  text-align: center !important;
-  margin-bottom: 1.5rem !important;
+/* Force high contrast for EVERY label on the page */
+* [class*="label"], label, .pf-v5-c-form__label, .pf-c-form__label {
   color: var(--dlt-foreground) !important;
-  letter-spacing: -0.025em !important;
-}
-
-/* Forms Accessibility */
-label, .pf-c-form__label {
-  display: block !important;
   font-size: 1.125rem !important;
   font-weight: 800 !important;
-  margin-bottom: 0.75rem !important;
-  color: var(--dlt-foreground) !important;
+  display: block !important;
+  margin-bottom: 0.5rem !important;
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-.pf-c-form-control {
-  display: block !important;
-  width: 100% !important;
+/* Force input styling */
+input, .pf-v5-c-form-control, .pf-c-form-control {
   padding: 1rem !important;
   font-size: 1.125rem !important;
-  line-height: 1.5 !important;
-  color: var(--dlt-foreground) !important;
-  background-color: white !important;
   border: 2px solid var(--dlt-border) !important;
-  border-radius: var(--radius) !important;
-  box-sizing: border-box !important;
+  border-radius: 0.5rem !important;
+  width: 100% !important;
   height: auto !important;
 }
 
-input:focus, .pf-c-form-control:focus {
-  border-color: var(--dlt-primary) !important;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.2) !important;
-  outline: none !important;
-}
-
-/* Primary Button */
-.btn-primary,
-button[type="submit"],
-#kc-login {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  padding: 1rem !important;
-  font-size: 1.25rem !important;
-  font-weight: 800 !important;
-  color: white !important;
+/* Primary Button Override */
+#kc-login, .pf-v5-c-button.pf-m-primary, .pf-c-button.pf-m-primary {
   background-color: var(--dlt-primary) !important;
-  border: none !important;
-  border-radius: var(--radius) !important;
-  cursor: pointer !important;
-  box-shadow: var(--shadow-md) !important;
-  margin-top: 1rem !important;
+  font-weight: 800 !important;
+  font-size: 1.25rem !important;
+  padding: 1rem !important;
+  border-radius: 0.5rem !important;
+  color: white !important;
 }
 
-.btn-primary:hover {
-  background-color: var(--dlt-primary-hover) !important;
-}
-
-/* SOCIAL PROVIDERS - NUCLEAR FIX FOR KEYCLOAK 26 / PF5 */
-#kc-social-providers, .kc-social-section, .pf-c-login__main-footer-band {
-  margin-top: 2.5rem !important;
-  padding-top: 1.5rem !important;
-  border-top: 1.5px solid var(--dlt-border) !important;
-  width: 100% !important;
+/* SOCIAL PROVIDERS FIX - TARGETING BY FRAGMENTS */
+[class*="social"], [id*="social"], .pf-v5-c-login__main-footer-band, .pf-c-login__main-footer-band {
   display: block !important;
+  border-top: 2px solid var(--dlt-border) !important;
+  margin-top: 2rem !important;
+  padding-top: 2rem !important;
 }
 
-/* Stack the providers vertically */
-#kc-social-providers ul, 
-.pf-c-login__main-footer-band-items,
-.kc-social-links {
+/* Force vertical stacking for children of social containers */
+[class*="social"] ul, [class*="social"] div[class*="items"], .pf-v5-c-login__main-footer-band-items {
   display: flex !important;
   flex-direction: column !important;
   gap: 1rem !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  list-style: none !important;
-  width: 100% !important;
 }
 
-/* Target the individual social item container */
-.kc-social-item, .kc-social-grid-item, #kc-social-providers li {
-    width: 100% !important;
-}
-
-/* AGGRESSIVE SOCIAL BUTTON FIX */
-#kc-social-providers a, 
-.pf-c-button.pf-m-control, 
-.pf-v5-c-button.pf-v5-m-control {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  width: 100% !important;
-  min-height: 3.5rem !important;
-  max-height: 4rem !important; /* Force stability */
-  padding: 0 1.5rem !important;
-  margin: 0 !important;
-  font-size: 1.125rem !important;
-  font-weight: 700 !important;
-  color: var(--dlt-foreground) !important;
-  background-color: white !important;
-  border: 2px solid var(--dlt-border) !important;
-  border-radius: var(--radius) !important;
-  text-decoration: none !important;
-  box-sizing: border-box !important;
-}
-
-/* FIX FOR GIANT ICONS - Target EVERY potential image holder */
-#kc-social-providers img,
-#kc-social-providers svg,
-#kc-social-providers i,
-#kc-social-providers span[class*="icon"],
-.pf-c-button__icon img,
-.pf-c-button__icon svg,
+/* FORCE ICON SIZE ON EVERY IMG/SVG IN THE SOCIAL SECTION */
+[class*="social"] img, 
+[class*="social"] svg, 
+[id*="social"] img, 
+[id*="social"] svg,
 .pf-v5-c-button__icon img,
 .pf-v5-c-button__icon svg {
   width: 24px !important;
@@ -220,53 +88,14 @@ button[type="submit"],
   min-height: 24px !important;
   max-width: 24px !important;
   max-height: 24px !important;
-  margin-right: 1rem !important;
   object-fit: contain !important;
-  filter: grayscale(1) contrast(1.1) opacity(0.8) !important;
+  margin-right: 1rem !important;
 }
 
-#kc-social-providers a:hover {
-  background-color: var(--dlt-background) !important;
-  border-color: var(--dlt-primary) !important;
-}
-
-#kc-social-providers a:hover img,
-#kc-social-providers a:hover svg {
-  filter: grayscale(0) contrast(1) opacity(1) !important;
-}
-
-/* Separator styling ("Or sign in with") */
-#kc-social-providers h4 {
-  font-size: 0.875rem !important;
-  font-weight: 800 !important;
-  color: var(--dlt-muted-foreground) !important;
-  text-align: center !important;
+/* Clean up header/logo area */
+[id*="header"], [class*="header"], .pf-v5-c-brand {
   margin-bottom: 2rem !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.1em !important;
-}
-
-/* Registration Section */
-#kc-registration {
-  margin-top: 2rem !important;
-  padding: 2rem 0 !important;
-  border-top: 2px solid var(--dlt-border) !important;
   text-align: center !important;
-  font-size: 1.125rem !important;
-  color: var(--dlt-muted-foreground) !important;
-}
-
-#kc-registration a {
   font-weight: 800 !important;
-  color: var(--dlt-primary) !important;
-}
-
-/* Mobile Responsiveness Override */
-@media (max-width: 640px) {
-  #kc-content, .card-pf {
-    border: none !important;
-    box-shadow: none !important;
-    background: transparent !important;
-    padding: 1.5rem !important;
-  }
+  font-size: 1.5rem !important;
 }
