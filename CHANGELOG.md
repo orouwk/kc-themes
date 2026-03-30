@@ -17,7 +17,7 @@ Read [cicd.semver-protocol.md](../dlt-codex/protocols/cicd.semver-protocol.md) f
 
 ### Changed
 
-- _(List changes in existing functionality here)_
+- Improve layout with social buttons
 
 ### Fixed
 

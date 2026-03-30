@@ -144,31 +144,28 @@ body,
 
 label {
   display: block;
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.625rem;
   color: var(--dlt-foreground);
 }
 
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="tel"],
+input[type="number"],
 select {
   display: block;
   width: 100%;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
   color: var(--dlt-foreground);
-  background-color: var(
-    --dlt-background
-  ); /* Slight contrast for input bg? Or white */
   background-color: white;
-  border: 1px solid var(--dlt-border);
-  border-radius: calc(
-    var(--radius) - 2px
-  ); /* Slightly smaller radius for inputs */
-  transition: all 0.15s ease-in-out;
+  border: 1.5px solid var(--dlt-border);
+  border-radius: calc(var(--radius) - 2px);
+  transition: all 0.2s ease-in-out;
   box-sizing: border-box;
 }
 
@@ -177,10 +174,17 @@ input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus {
   outline: none;
-  border-color: var(--dlt-ring);
-  box-shadow:
-    0 0 0 2px var(--dlt-background),
-    0 0 0 4px var(--dlt-ring); /* Ring effect */
+  border-color: var(--dlt-primary);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.15);
+}
+
+/* Helper text and small notes */
+.pf-c-form__helper-text, 
+.instruction {
+  font-size: 0.875rem;
+  color: var(--dlt-muted-foreground);
+  margin-top: 0.5rem;
+  font-weight: 500;
 }
 
 /* Buttons */
@@ -191,75 +195,59 @@ input[type="submit"] {
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0.5rem 1rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  line-height: 1.25rem;
+  padding: 0.875rem 1rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.5rem;
   color: var(--dlt-primary-foreground);
   background-color: var(--dlt-primary);
   border: 1px solid transparent;
-  border-radius: calc(var(--radius) - 2px);
+  border-radius: var(--radius);
   cursor: pointer;
-  transition: background-color 0.15s ease-in-out;
-  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-md);
 }
 
-.btn-primary:hover,
-button[type="submit"]:hover,
-input[type="submit"]:hover {
+.btn-primary:hover {
   background-color: var(--dlt-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
 }
 
-.btn-secondary {
-  background-color: var(--dlt-secondary);
-  color: var(--dlt-secondary-foreground);
-}
-
-/* Links */
-a {
-  color: var(--dlt-primary);
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.875rem;
-  transition: color 0.15s ease;
-}
-
-a:hover {
-  color: var(--dlt-primary-hover);
-  text-decoration: underline;
-}
-
+/* Links and options */
 #kc-form-options {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem;
-  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
 }
 
 .checkbox label {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  color: var(--dlt-muted-foreground);
-  font-weight: 400;
+  gap: 0.75rem;
+  color: var(--dlt-foreground);
+  font-weight: 600;
+  cursor: pointer;
 }
 
 input[type="checkbox"] {
-  width: 1rem;
-  height: 1rem;
+  width: 1.25rem;
+  height: 1.25rem;
   border-radius: 4px;
-  border: 1px solid var(--dlt-input);
+  border: 2px solid var(--dlt-border);
   cursor: pointer;
   accent-color: var(--dlt-primary);
 }
 
 /* Alerts */
 .alert {
-  padding: 0.75rem 1rem;
+  padding: 1rem;
   border-radius: calc(var(--radius) - 2px);
   margin-bottom: 1.5rem;
-  font-size: 0.875rem;
+  font-size: 1rem;
+  font-weight: 500;
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
@@ -272,31 +260,88 @@ input[type="checkbox"] {
   color: #991b1b;
 }
 
-.alert-success {
-  background-color: #f0fdf4;
-  border-color: #bbf7d0;
-  color: #166534;
+/* Social Providers - Fixed Layout */
+#kc-social-providers {
+  margin-top: 2rem;
+  border-top: 1px solid var(--dlt-border);
+  padding-top: 1.5rem;
 }
 
-.alert-warning {
-  background-color: #fffbeb;
-  border-color: #fde68a;
-  color: #92400e;
+#kc-social-providers h4 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--dlt-muted-foreground);
+  text-align: center;
+  margin-bottom: 1.25rem;
+  position: relative;
+  background: var(--dlt-card);
+  display: inline-block;
+  padding: 0 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -2.3rem;
 }
 
-.alert-info {
-  background-color: #eff6ff;
-  border-color: #bfdbfe;
-  color: #1e40af;
+.pf-c-login__main-footer-band-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Social Buttons Styling */
+.pf-c-button.pf-m-control {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  color: var(--dlt-foreground) !important;
+  background-color: white !important;
+  border: 1px solid var(--dlt-border) !important;
+  border-radius: var(--radius) !important;
+  transition: all 0.2s ease;
+  text-decoration: none !important;
+  box-shadow: var(--shadow-sm);
+}
+
+.pf-c-button.pf-m-control:hover {
+  background-color: var(--dlt-secondary) !important;
+  border-color: var(--dlt-muted-foreground) !important;
+  box-shadow: var(--shadow-md);
+}
+
+/* Monochromatic Social Icons */
+.pf-c-button__icon {
+  margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+.pf-c-button__icon img, 
+.pf-c-button__icon svg {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  filter: grayscale(1) opacity(0.7); /* Monochromatic effect */
+  transition: filter 0.2s ease;
+}
+
+.pf-c-button.pf-m-control:hover .pf-c-button__icon img,
+.pf-c-button.pf-m-control:hover .pf-c-button__icon svg {
+  filter: grayscale(0) opacity(1); /* Reveal color on hover for feedback */
 }
 
 /* Registration Section */
 #kc-registration {
   margin-top: 1.5rem;
-  padding-top: 1.5rem;
+  padding: 1.5rem 0;
   border-top: 1px solid var(--dlt-border);
   text-align: center;
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--dlt-muted-foreground);
 }
 
@@ -304,63 +349,9 @@ input[type="checkbox"] {
   margin-right: 0.5rem;
 }
 
-/* Location Selector (Specific to DLT) */
-.location-selector {
-  margin: 1.5rem 0;
-  padding: 1rem;
-  background: var(--dlt-secondary);
-  border-radius: calc(var(--radius) - 2px);
-  border: 1px dashed var(--dlt-border);
-}
-
-.location-selector h3 {
-  margin: 0 0 0.75rem 0;
-  color: var(--dlt-foreground);
-  font-size: 0.875rem;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.location-selector h3::before {
-  content: "📍";
-}
-
-.map-preview {
-  height: 160px;
-  background: var(--dlt-background);
-  border-radius: calc(var(--radius) - 4px);
-  border: 1px solid var(--dlt-border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dlt-muted-foreground);
-  font-size: 0.875rem;
-}
-
-/* Spinner */
-.spinner {
-  border: 3px solid var(--dlt-muted);
-  border-top: 3px solid var(--dlt-primary);
-  border-radius: 50%;
-  width: 24px;
-  height: 24px;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Keycloak specific hidden elements cleanup */
-#kc-locale {
-  display: none; /* Hide standard locale selector if not needed or style it */
+#kc-registration a {
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 /* Mobile Responsiveness */
@@ -373,6 +364,12 @@ input[type="checkbox"] {
   }
 
   #kc-content {
+    padding: 1.5rem;
+  }
+
+  /* Ensure buttons are large enough for tap targets */
+  .btn-primary, 
+  .pf-c-button.pf-m-control {
     padding: 1rem;
   }
 }
