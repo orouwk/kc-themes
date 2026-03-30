@@ -260,89 +260,117 @@ input[type="checkbox"] {
   color: #991b1b;
 }
 
-/* Social Providers - Fixed Layout */
+/* Social Providers - Fixed Layout - Aggressive Override */
 #kc-social-providers {
-  margin-top: 2rem;
-  border-top: 1px solid var(--dlt-border);
-  padding-top: 1.5rem;
+  margin-top: 2.5rem !important;
+  border-top: 1px solid var(--dlt-border) !important;
+  padding-top: 1.5rem !important;
+  width: 100% !important;
 }
 
 #kc-social-providers h4 {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--dlt-muted-foreground);
-  text-align: center;
-  margin-bottom: 1.25rem;
-  position: relative;
-  background: var(--dlt-card);
-  display: inline-block;
-  padding: 0 1rem;
-  left: 50%;
-  transform: translateX(-50%);
-  top: -2.3rem;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: var(--dlt-muted-foreground) !important;
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  position: relative !important;
+  background: var(--dlt-card) !important;
+  display: inline-block !important;
+  padding: 0 1rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: -2.3rem !important;
+  z-index: 10 !important;
 }
 
+/* Force vertical stacking for any ul/list in the social section */
+#kc-social-providers ul,
 .pf-c-login__main-footer-band-items {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.75rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
+  width: 100% !important;
 }
 
-/* Social Buttons Styling */
+#kc-social-providers li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Aggressive Social Button Styling */
+#kc-social-providers a,
+#kc-social-providers button,
 .pf-c-button.pf-m-control {
   display: flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-size: 1rem !important;
-  font-weight: 600 !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 3.5rem !important;
+  max-height: 4rem !important;
+  padding: 0.5rem 1.5rem !important;
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
   color: var(--dlt-foreground) !important;
   background-color: white !important;
-  border: 1px solid var(--dlt-border) !important;
+  border: 2px solid var(--dlt-border) !important;
   border-radius: var(--radius) !important;
-  transition: all 0.2s ease;
+  transition: all 0.2s ease !important;
   text-decoration: none !important;
-  box-shadow: var(--shadow-sm);
+  box-sizing: border-box !important;
 }
 
-.pf-c-button.pf-m-control:hover {
+#kc-social-providers a:hover,
+#kc-social-providers button:hover {
   background-color: var(--dlt-secondary) !important;
-  border-color: var(--dlt-muted-foreground) !important;
-  box-shadow: var(--shadow-md);
+  border-color: var(--dlt-primary) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: var(--shadow-md) !important;
 }
 
-/* Monochromatic Social Icons */
-.pf-c-button__icon {
-  margin-right: 0.75rem;
-  display: flex;
-  align-items: center;
-}
-
-.pf-c-button__icon img, 
+/* Force Fix for Huge Icons */
+#kc-social-providers img,
+#kc-social-providers svg,
+.pf-c-button__icon img,
 .pf-c-button__icon svg {
-  width: 1.5rem !important;
-  height: 1.5rem !important;
-  filter: grayscale(1) opacity(0.7); /* Monochromatic effect */
-  transition: filter 0.2s ease;
+  width: 24px !important;
+  height: 24px !important;
+  min-width: 24px !important;
+  min-height: 24px !important;
+  max-width: 24px !important;
+  max-height: 24px !important;
+  object-fit: contain !important;
+  margin-right: 0.75rem !important;
+  filter: grayscale(1) contrast(1.2) opacity(0.8) !important;
+  transition: filter 0.2s ease !important;
 }
 
-.pf-c-button.pf-m-control:hover .pf-c-button__icon img,
-.pf-c-button.pf-m-control:hover .pf-c-button__icon svg {
-  filter: grayscale(0) opacity(1); /* Reveal color on hover for feedback */
+#kc-social-providers a:hover img,
+#kc-social-providers a:hover svg {
+  filter: grayscale(0) contrast(1) opacity(1) !important;
 }
 
-/* Registration Section */
+/* Accessibility: High contrast label styles */
+label, .pf-c-form__label {
+    color: var(--dlt-foreground) !important;
+    font-size: 1.125rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.01em !important;
+}
+
+/* Registration Section Visibility */
 #kc-registration {
-  margin-top: 1.5rem;
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--dlt-border);
-  text-align: center;
-  font-size: 1rem;
-  color: var(--dlt-muted-foreground);
+  margin-top: 2rem !important;
+  padding: 2rem 0 !important;
+  border-top: 2px solid var(--dlt-border) !important;
+  text-align: center !important;
+  font-size: 1.125rem !important;
+  color: var(--dlt-muted-foreground) !important;
 }
 
 #kc-registration span {
