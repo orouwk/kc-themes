@@ -5,9 +5,9 @@
 :root {
   /* Default Light Mode Tokens */
   --dlt-background: #fafaf9; /* Stone-50 */
-  --dlt-foreground: #1c1917; /* Stone-900 */
+  --dlt-foreground: #a8a29e; /* Stone-400 */
   --dlt-card: #ffffff;
-  --dlt-card-foreground: #1c1917;
+  --dlt-card-foreground: #a8a29e; /* Stone-400 */
   --dlt-border: #e7e5e4; /* Stone-200 */
   --dlt-primary: #10b981; /* Emerald-500 */
   --dlt-primary-hover: #059669;
@@ -22,17 +22,18 @@
 }
 
 /* Dark Mode Overrides - NUCLEAR VISIBILITY FIX */
-.pf-v5-theme-dark, 
-[data-theme='dark'],
+.pf-v5-theme-dark,
+[data-theme="dark"],
 .pf-v5-c-login {
   /* Only apply dark tokens if the theme class is actually present on doc root */
 }
 
 /* Specific targeting for the dark mode class Keycloak uses */
-html.pf-v5-theme-dark, .pf-v5-theme-dark :root {
-  --dlt-background: #0c0a09; /* Stone-950 */
+html.pf-v5-theme-dark,
+.pf-v5-theme-dark :root {
+  --dlt-background: #a8a29e; /* Stone-400 */
   --dlt-foreground: #fafaf9; /* Stone-50 */
-  --dlt-card: #1c1917; /* Stone-900 */
+  --dlt-card: #a8a29e; /* Stone-400 */
   --dlt-card-foreground: #fafaf9;
   --dlt-border: #292524; /* Stone-800 */
   --dlt-muted: #a8a29e; /* Stone-400 */
@@ -46,15 +47,21 @@ html.pf-v5-theme-dark, .pf-v5-theme-dark :root {
 }
 
 /* 1. Global Reset & Body Background */
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif !important;
-  background-image: linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)), url("../img/dlt-v2.jpg") !important;
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif !important;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+    url("../img/dlt-v2.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
@@ -62,7 +69,9 @@ body {
 }
 
 html.pf-v5-theme-dark body {
-  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("../img/dlt-v2.jpg") !important;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url("../img/dlt-v2.jpg") !important;
 }
 
 /* 2. Main Container & Card Styling */
@@ -86,8 +95,8 @@ html.pf-v5-theme-dark body {
   overflow: hidden;
 }
 
-.pf-v5-c-login__main-header, 
-.pf-v5-c-login__main-body, 
+.pf-v5-c-login__main-header,
+.pf-v5-c-login__main-body,
 .pf-v5-c-login__main-footer {
   padding: 2.5rem 3.5rem !important;
 }
@@ -125,7 +134,8 @@ html.pf-v5-theme-dark body {
   margin-right: 1rem;
 }
 
-#kc-page-title, .pf-v5-c-title {
+#kc-page-title,
+.pf-v5-c-title {
   color: var(--dlt-foreground) !important;
   font-size: 2rem !important;
   font-weight: 800 !important;
@@ -214,13 +224,17 @@ html.pf-v5-theme-dark body {
   font-size: 1rem !important;
 }
 
-#kc-registration, .pf-v5-c-helper-text, .pf-v5-c-check__label {
+#kc-registration,
+.pf-v5-c-helper-text,
+.pf-v5-c-check__label {
   font-size: 1.125rem !important;
   font-weight: 700 !important;
   color: var(--dlt-muted) !important;
 }
 
-a, #kc-registration a, .pf-v5-c-helper-text__item-text a {
+a,
+#kc-registration a,
+.pf-v5-c-helper-text__item-text a {
   color: var(--dlt-primary) !important;
   font-weight: 800 !important;
   text-decoration: none !important;
