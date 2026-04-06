@@ -3,10 +3,9 @@
     "id": "kc-theme-agric",
     "icon": "pf-icon-key",
     "label": "DLT",
-    "descriptionLabel": "Account Management",
-    "children": []
+    "descriptionLabel": "Account Management"
   },
-  { "label": "personalInfo", "path": "/" },
+  { "label": "personalInfo", "path": "" },
   {
     "label": "accountSecurity",
     "children": [
