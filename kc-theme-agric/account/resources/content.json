@@ -5,7 +5,7 @@
     "label": "DLT",
     "descriptionLabel": "Account Management"
   },
-  { "label": "personalInfo", "path": "" },
+  { "label": "personalInfo", "path": "personalInfo" },
   {
     "label": "accountSecurity",
     "children": [
