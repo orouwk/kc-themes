@@ -48,13 +48,13 @@
 html.pf-v5-theme-dark,
 .pf-v5-theme-dark,
 [data-theme="dark"] {
-  --dlt-background: #0c0a09 !important;
-  --dlt-foreground: #fafaf9 !important;
-  --dlt-card: #1c1917 !important;
-  --dlt-card-foreground: #fafaf9 !important;
-  --dlt-border: #44403c !important;
-  --dlt-muted: #a8a29e !important;
-  --dlt-footer-bg: #0c0a09 !important;
+  --dlt-background: #0c0a09;
+  --dlt-foreground: #fafaf9;
+  --dlt-card: #1c1917;
+  --dlt-card-foreground: #fafaf9;
+  --dlt-border: #44403c;
+  --dlt-muted: #a8a29e;
+  --dlt-footer-bg: #0c0a09;
 
   /* Force PF5 variables (Dark) */
   --pf-v5-global--primary-color--100: var(--dlt-primary) !important;
@@ -72,72 +72,80 @@ body {
 }
 
 body {
-  font-family: "Inter", -apple-system, sans-serif !important;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../img/dlt-v2.jpg") !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
-  background-color: var(--dlt-background) !important;
-  color: var(--dlt-foreground) !important;
+  font-family:
+    "Inter",
+    -apple-system,
+    sans-serif;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+    url("../img/dlt-v2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: var(--dlt-background);
+  color: var(--dlt-foreground);
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/dlt-v2.jpg") !important;
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url("../img/dlt-v2.jpg");
   }
 }
 
 html.pf-v5-theme-dark body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/dlt-v2.jpg") !important;
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/dlt-v2.jpg");
 }
 
 /* 2. Main Container & Card Styling */
 .pf-v5-c-login {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-height: 100vh !important;
-  background: transparent !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: transparent;
 }
 
 .pf-v5-c-login__main {
-  background-color: var(--dlt-card) !important;
-  color: var(--dlt-card-foreground) !important;
-  border-radius: var(--radius) !important;
-  border: 1.5px solid var(--dlt-border) !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
-  width: 100% !important;
-  max-width: 520px !important;
-  padding: 0 !important;
+  background-color: var(--dlt-card);
+  color: var(--dlt-card-foreground);
+  border-radius: var(--radius);
+  border: 1.5px solid var(--dlt-border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+  width: 100%;
+  max-width: 520px;
+  padding: 0;
   overflow: hidden;
 }
 
 .pf-v5-c-login__main-header,
 .pf-v5-c-login__main-body,
 .pf-v5-c-login__main-footer {
-  padding: 2.5rem 3.5rem !important;
-  background-color: inherit !important;
+  background-color: inherit;
 }
 
 .pf-v5-c-login__main-header {
-  padding-bottom: 0 !important;
+  padding: 2rem 2rem;
 }
 
 .pf-v5-c-login__main-footer {
-  padding-top: 2rem !important;
-  background-color: var(--dlt-footer-bg) !important;
-  border-top: 1px solid var(--dlt-border) !important;
+  padding-top: 2rem;
+  background-color: var(--dlt-footer-bg);
+  border-top: 1px solid var(--dlt-border);
 }
 
 /* 3. Header & Logo Styling */
 #kc-header-wrapper {
-  color: var(--dlt-foreground) !important;
-  font-size: 1.75rem !important;
-  font-weight: 800 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  margin-bottom: 2rem !important;
+  color: var(--dlt-foreground);
+  font-size: 1.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 #kc-header-wrapper::before {
@@ -153,152 +161,152 @@ html.pf-v5-theme-dark body {
 
 #kc-page-title,
 .pf-v5-c-title {
-  color: var(--dlt-foreground) !important;
-  font-size: 2.25rem !important;
-  font-weight: 800 !important;
-  letter-spacing: -0.025em !important;
-  text-align: center !important;
+  color: var(--dlt-foreground);
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  text-align: center;
 }
 
 /* 4. Form Labels & Inputs */
 .pf-v5-c-form__label-text {
-  font-size: 1.125rem !important;
-  font-weight: 700 !important;
-  color: var(--dlt-foreground) !important;
-  margin-bottom: 0.5rem !important;
-  display: block !important;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--dlt-foreground);
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
 .pf-v5-c-form-control input {
-  padding: 1rem 1.25rem !important;
-  font-size: 1.125rem !important;
-  color: var(--dlt-foreground) !important;
-  background-color: var(--dlt-card) !important;
-  border: 1.5px solid var(--dlt-border) !important;
-  border-radius: 0.75rem !important;
-  min-height: 3.75rem !important;
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+  color: var(--dlt-foreground);
+  background-color: var(--dlt-card);
+  border: 1.5px solid var(--dlt-border);
+  border-radius: 0.75rem;
+  min-height: 3.75rem;
 }
 
 .pf-v5-c-form-control input:focus {
-  border-color: var(--dlt-primary) !important;
-  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2) !important;
+  border-color: var(--dlt-primary);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
 }
 
 /* 5. Primary Action Button */
 #kc-login.pf-v5-c-button.pf-m-primary {
-  background-color: var(--dlt-primary) !important;
-  color: #ffffff !important;
-  font-size: 1.25rem !important;
-  font-weight: 800 !important;
-  padding: 1rem 2rem !important;
-  border-radius: 0.75rem !important;
-  border: none !important;
-  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2) !important;
-  min-height: 3.75rem !important;
-  width: 100% !important;
-  transition: all 0.2s ease !important;
+  background-color: var(--dlt-primary);
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2);
+  min-height: 3.75rem;
+  width: 100%;
+  transition: all 0.2s ease;
 }
 
 #kc-login:hover {
-  background-color: var(--dlt-primary-hover) !important;
-  transform: translateY(-1px) !important;
-  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3) !important;
+  background-color: var(--dlt-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3);
 }
 
 /* 6. SOCIAL PROVIDERS */
 #kc-social-providers ul {
-  display: grid !important;
-  grid-template-columns: 1fr 1fr !important;
-  gap: 1rem !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  list-style: none !important;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 #kc-social-providers a.pf-v5-c-button.pf-m-secondary {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0.75rem !important;
-  background-color: var(--dlt-card) !important;
-  border: 1.5px solid var(--dlt-border) !important;
-  border-radius: 0.75rem !important;
-  color: var(--dlt-foreground) !important;
-  font-weight: 600 !important;
-  font-size: 1rem !important;
-  min-height: 3.5rem !important;
-  text-decoration: none !important;
-  transition: all 0.2s ease !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  background-color: var(--dlt-card);
+  border: 1.5px solid var(--dlt-border);
+  border-radius: 0.75rem;
+  color: var(--dlt-foreground);
+  font-weight: 600;
+  font-size: 1rem;
+  min-height: 3.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
 }
 
 #kc-social-providers a svg {
-  width: 24px !important;
-  height: 24px !important;
-  margin-right: 0.75rem !important;
+  width: 24px;
+  height: 24px;
+  margin-right: 0.75rem;
 }
 
 #kc-social-providers a:hover {
-  background-color: var(--dlt-footer-bg) !important;
-  border-color: var(--dlt-primary) !important;
+  background-color: var(--dlt-footer-bg);
+  border-color: var(--dlt-primary);
 }
 
 /* 7. Footer Band & Links */
 .pf-v5-c-login__main-footer-band-item {
-  width: 100% !important;
-  text-align: center !important;
-  margin-bottom: 1.5rem !important;
-  color: var(--dlt-muted) !important;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--dlt-muted);
 }
 
 #kc-registration,
 .pf-v5-c-helper-text,
 .pf-v5-c-check__label {
-  font-size: 1rem !important;
-  color: var(--dlt-muted) !important;
-  font-weight: 500 !important;
+  font-size: 1rem;
+  color: var(--dlt-muted);
+  font-weight: 500;
 }
 
 a,
 #kc-registration a,
 .pf-v5-c-helper-text__item-text a,
 .pf-v5-c-login__main-footer-band-item a {
-  color: var(--dlt-primary) !important;
-  font-weight: 800 !important;
-  text-decoration: none !important;
+  color: var(--dlt-primary);
+  font-weight: 800;
+  text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline !important;
+  text-decoration: underline;
 }
 
 /* 8. UI Elements Polish */
 .pf-v5-c-button.pf-m-control {
-  color: var(--dlt-muted) !important;
+  color: var(--dlt-muted);
 }
 
 .pf-v5-c-check__input {
-  width: 1.125rem !important;
-  height: 1.125rem !important;
-  border-color: var(--dlt-border) !important;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-color: var(--dlt-border);
 }
 
 hr {
   border: 0;
-  border-top: 1px solid var(--dlt-border) !important;
-  margin: 2rem 0 !important;
+  border-top: 1px solid var(--dlt-border);
+  margin: 2rem 0;
 }
 
 /* 9. Mobile Adjustments */
 @media (max-width: 550px) {
   .pf-v5-c-login__main {
-    border-radius: 0 !important;
-    border: none !important;
-    max-width: 100% !important;
+    border-radius: 0;
+    border: none;
+    max-width: 100%;
   }
-  
+
   .pf-v5-c-login__main-header,
   .pf-v5-c-login__main-body,
   .pf-v5-c-login__main-footer {
-    padding: 2rem !important;
+    padding: 2rem;
   }
 }
