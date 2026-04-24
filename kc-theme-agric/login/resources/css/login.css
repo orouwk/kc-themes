@@ -3,16 +3,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
 :root {
-  /* Default Light Mode Tokens */
+  /* Default Light Mode Tokens - HIGH CONTRAST */
   --dlt-background: #fafaf9; /* Stone-50 */
-  --dlt-foreground: #a8a29e; /* Stone-400 */
+  --dlt-foreground: #292524; /* Stone-800 - Deep for readability */
   --dlt-card: #ffffff;
-  --dlt-card-foreground: #a8a29e; /* Stone-400 */
+  --dlt-card-foreground: #292524; /* Stone-800 */
   --dlt-border: #e7e5e4; /* Stone-200 */
   --dlt-primary: #10b981; /* Emerald-500 */
   --dlt-primary-hover: #059669;
-  --dlt-muted: #78716c; /* Stone-500 */
-  --dlt-footer-bg: #fafaf9;
+  --dlt-muted: #57534e; /* Stone-600 */
+  --dlt-footer-bg: #f5f5f4; /* Stone-100 */
   --radius: 0.75rem;
 
   /* Global PatternFly Overrides (Light) */
@@ -21,23 +21,30 @@
   --pf-v5-global--link--Color: var(--dlt-primary);
 }
 
-/* Dark Mode Overrides - NUCLEAR VISIBILITY FIX */
-.pf-v5-theme-dark,
-[data-theme="dark"],
-.pf-v5-c-login {
-  /* Only apply dark tokens if the theme class is actually present on doc root */
+/* NUCLEAR DARK THEME - Targeting both class and system preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dlt-background: #0c0a09; /* Stone-950 */
+    --dlt-foreground: #fafaf9; /* Stone-50 */
+    --dlt-card: #1c1917; /* Stone-900 */
+    --dlt-card-foreground: #fafaf9;
+    --dlt-border: #44403c; /* Stone-700 */
+    --dlt-muted: #a8a29e; /* Stone-400 */
+    --dlt-footer-bg: #0c0a09;
+  }
 }
 
-/* Specific targeting for the dark mode class Keycloak uses */
+/* Explicit class-based overrides (PatternFly context) */
+.pf-v5-theme-dark,
 html.pf-v5-theme-dark,
-.pf-v5-theme-dark :root {
-  --dlt-background: #a8a29e; /* Stone-400 */
-  --dlt-foreground: #fafaf9; /* Stone-50 */
-  --dlt-card: #a8a29e; /* Stone-400 */
+[data-theme="dark"] {
+  --dlt-background: #0c0a09;
+  --dlt-foreground: #fafaf9;
+  --dlt-card: #1c1917;
   --dlt-card-foreground: #fafaf9;
-  --dlt-border: #292524; /* Stone-800 */
-  --dlt-muted: #a8a29e; /* Stone-400 */
-  --dlt-footer-bg: #171717;
+  --dlt-border: #44403c;
+  --dlt-muted: #a8a29e;
+  --dlt-footer-bg: #0c0a09;
 
   /* Force PF5 variables to respect our contrast */
   --pf-v5-global--Color--100: #fafaf9 !important;
@@ -68,9 +75,17 @@ body {
   color: var(--dlt-foreground) !important;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../img/dlt-v2.jpg") !important;
+  }
+}
+
 html.pf-v5-theme-dark body {
   background-image:
-    linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
     url("../img/dlt-v2.jpg") !important;
 }
 
