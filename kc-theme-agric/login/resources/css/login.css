@@ -21,37 +21,7 @@
   --pf-v5-global--link--Color: var(--dlt-primary);
 }
 
-/* NUCLEAR DARK THEME - Targeting both class and system preference */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --dlt-background: #0c0a09; /* Stone-950 */
-    --dlt-foreground: #fafaf9; /* Stone-50 */
-    --dlt-card: #1c1917; /* Stone-900 */
-    --dlt-card-foreground: #fafaf9;
-    --dlt-border: #44403c; /* Stone-700 */
-    --dlt-muted: #a8a29e; /* Stone-400 */
-    --dlt-footer-bg: #0c0a09;
-  }
-}
 
-/* Explicit class-based overrides (PatternFly context) */
-.pf-v5-theme-dark,
-html.pf-v5-theme-dark,
-[data-theme="dark"] {
-  --dlt-background: #0c0a09;
-  --dlt-foreground: #fafaf9;
-  --dlt-card: #1c1917;
-  --dlt-card-foreground: #fafaf9;
-  --dlt-border: #44403c;
-  --dlt-muted: #a8a29e;
-  --dlt-footer-bg: #0c0a09;
-
-  /* Force PF5 variables to respect our contrast */
-  --pf-v5-global--Color--100: #fafaf9 !important;
-  --pf-v5-global--primary-color--100: var(--dlt-primary) !important;
-  --pf-v5-global--link--Color: var(--dlt-primary) !important;
-  --pf-v5-global--BackgroundColor--100: var(--dlt-card) !important;
-}
 
 /* 1. Global Reset & Body Background */
 html,
@@ -276,5 +246,64 @@ a:hover {
     border-radius: 0 !important;
     border: none !important;
     max-width: 100% !important;
+  }
+}
+
+/* ==========================================================================
+   NUCLEAR DARK THEME OVERRIDES (Moved to bottom for specificity/cascade)
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dlt-background: #0c0a09;
+    --dlt-foreground: #fafaf9;
+    --dlt-card: #1c1917;
+    --dlt-card-foreground: #fafaf9;
+    --dlt-border: #44403c;
+    --dlt-muted: #a8a29e;
+    --dlt-footer-bg: #0c0a09;
+  }
+
+  body {
+    background-color: #0c0a09 !important;
+    color: #fafaf9 !important;
+  }
+
+  /* Aggressive contrast for system dark mode users */
+  #kc-page-title,
+  .pf-v5-c-title,
+  .pf-v5-c-form__label-text,
+  .pf-v5-c-login__main-footer-band-item,
+  .pf-v5-c-helper-text,
+  .pf-v5-c-check__label {
+    color: #fafaf9 !important;
+  }
+}
+
+.pf-v5-theme-dark,
+html.pf-v5-theme-dark,
+[data-theme="dark"] {
+  --dlt-background: #0c0a09;
+  --dlt-foreground: #fafaf9;
+  --dlt-card: #1c1917;
+  --dlt-card-foreground: #fafaf9;
+  --dlt-border: #44403c;
+  --dlt-muted: #a8a29e;
+  --dlt-footer-bg: #0c0a09;
+
+  /* Force PF5 variables */
+  --pf-v5-global--Color--100: #fafaf9 !important;
+  --pf-v5-global--primary-color--100: var(--dlt-primary) !important;
+  --pf-v5-global--link--Color: var(--dlt-primary) !important;
+  --pf-v5-global--BackgroundColor--100: var(--dlt-card) !important;
+
+  /* Aggressive contrast for class-triggered dark mode */
+  #kc-page-title,
+  .pf-v5-c-title,
+  .pf-v5-c-form__label-text,
+  .pf-v5-c-login__main-footer-band-item,
+  .pf-v5-c-helper-text,
+  .pf-v5-c-check__label {
+    color: #fafaf9 !important;
   }
 }
