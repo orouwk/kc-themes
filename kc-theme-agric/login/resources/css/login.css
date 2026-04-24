@@ -2,26 +2,66 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 
+/* 
+   THEME ENGINE v2 - IRONCLAD ALIGNMENT 
+   We define a base set of theme variables that are then FORCED into the framework.
+*/
+
 :root {
-  /* Default Light Mode Tokens - HIGH CONTRAST */
-  --dlt-background: #fafaf9; /* Stone-50 */
-  --dlt-foreground: #292524; /* Stone-800 - Deep for readability */
-  --dlt-card: #ffffff;
-  --dlt-card-foreground: #292524; /* Stone-800 */
-  --dlt-border: #e7e5e4; /* Stone-200 */
+  /* Core Brand Tokens (Theme Independent) */
   --dlt-primary: #10b981; /* Emerald-500 */
   --dlt-primary-hover: #059669;
-  --dlt-muted: #57534e; /* Stone-600 */
-  --dlt-footer-bg: #f5f5f4; /* Stone-100 */
   --radius: 0.75rem;
 
-  /* Global PatternFly Overrides (Light) */
-  --pf-v5-global--Color--100: var(--dlt-foreground);
-  --pf-v5-global--primary-color--100: var(--dlt-primary);
-  --pf-v5-global--link--Color: var(--dlt-primary);
+  /* DEFAULT LIGHT MODE TOKENS */
+  --dlt-background: #fafaf9; /* Stone-50 */
+  --dlt-foreground: #1c1917; /* Stone-900 - Max Contrast */
+  --dlt-card: #ffffff;
+  --dlt-card-foreground: #1c1917;
+  --dlt-border: #e7e5e4; /* Stone-200 */
+  --dlt-muted: #57534e; /* Stone-600 */
+  --dlt-footer-bg: #f5f5f4; /* Stone-100 */
+
+  /* Force PF5 variables (Light) */
+  --pf-v5-global--primary-color--100: var(--dlt-primary) !important;
+  --pf-v5-global--link--Color: var(--dlt-primary) !important;
+  --pf-v5-global--Color--100: var(--dlt-foreground) !important;
 }
 
+/* 
+   ROBUST DARK MODE TRIGGER 
+   Matches system preference OR explicit PF5 dark theme class.
+*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --dlt-background: #0c0a09; /* Stone-950 */
+    --dlt-foreground: #fafaf9; /* Stone-50 */
+    --dlt-card: #1c1917; /* Stone-900 */
+    --dlt-card-foreground: #fafaf9;
+    --dlt-border: #44403c; /* Stone-700 */
+    --dlt-muted: #a8a29e; /* Stone-400 */
+    --dlt-footer-bg: #0c0a09;
+  }
+}
 
+/* Explicit class-based overrides for framework consistency */
+html.pf-v5-theme-dark,
+.pf-v5-theme-dark,
+[data-theme="dark"] {
+  --dlt-background: #0c0a09 !important;
+  --dlt-foreground: #fafaf9 !important;
+  --dlt-card: #1c1917 !important;
+  --dlt-card-foreground: #fafaf9 !important;
+  --dlt-border: #44403c !important;
+  --dlt-muted: #a8a29e !important;
+  --dlt-footer-bg: #0c0a09 !important;
+
+  /* Force PF5 variables (Dark) */
+  --pf-v5-global--primary-color--100: var(--dlt-primary) !important;
+  --pf-v5-global--link--Color: var(--dlt-primary) !important;
+  --pf-v5-global--Color--100: #fafaf9 !important;
+  --pf-v5-global--BackgroundColor--100: #1c1917 !important;
+}
 
 /* 1. Global Reset & Body Background */
 html,
@@ -32,31 +72,23 @@ body {
 }
 
 body {
-  font-family:
-    "Inter",
-    -apple-system,
-    sans-serif !important;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
-    url("../img/dlt-v2.jpg") !important;
+  font-family: "Inter", -apple-system, sans-serif !important;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), url("../img/dlt-v2.jpg") !important;
   background-size: cover !important;
   background-position: center !important;
   background-attachment: fixed !important;
+  background-color: var(--dlt-background) !important;
   color: var(--dlt-foreground) !important;
 }
 
 @media (prefers-color-scheme: dark) {
   body {
-    background-image:
-      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../img/dlt-v2.jpg") !important;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/dlt-v2.jpg") !important;
   }
 }
 
 html.pf-v5-theme-dark body {
-  background-image:
-    linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url("../img/dlt-v2.jpg") !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url("../img/dlt-v2.jpg") !important;
 }
 
 /* 2. Main Container & Card Styling */
@@ -73,7 +105,7 @@ html.pf-v5-theme-dark body {
   color: var(--dlt-card-foreground) !important;
   border-radius: var(--radius) !important;
   border: 1.5px solid var(--dlt-border) !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.45) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6) !important;
   width: 100% !important;
   max-width: 520px !important;
   padding: 0 !important;
@@ -84,11 +116,11 @@ html.pf-v5-theme-dark body {
 .pf-v5-c-login__main-body,
 .pf-v5-c-login__main-footer {
   padding: 2.5rem 3.5rem !important;
+  background-color: inherit !important;
 }
 
 .pf-v5-c-login__main-header {
   padding-bottom: 0 !important;
-  text-align: center !important;
 }
 
 .pf-v5-c-login__main-footer {
@@ -122,104 +154,114 @@ html.pf-v5-theme-dark body {
 #kc-page-title,
 .pf-v5-c-title {
   color: var(--dlt-foreground) !important;
-  font-size: 2rem !important;
+  font-size: 2.25rem !important;
   font-weight: 800 !important;
   letter-spacing: -0.025em !important;
+  text-align: center !important;
 }
 
-/* 4. Form Labels & Inputs - ACCESSIBILITY FOCUS */
+/* 4. Form Labels & Inputs */
 .pf-v5-c-form__label-text {
-  font-size: 1.25rem !important;
-  font-weight: 800 !important;
+  font-size: 1.125rem !important;
+  font-weight: 700 !important;
   color: var(--dlt-foreground) !important;
   margin-bottom: 0.5rem !important;
+  display: block !important;
 }
 
 .pf-v5-c-form-control input {
   padding: 1rem 1.25rem !important;
-  font-size: 1.25rem !important;
+  font-size: 1.125rem !important;
   color: var(--dlt-foreground) !important;
   background-color: var(--dlt-card) !important;
-  border: 2px solid var(--dlt-border) !important;
+  border: 1.5px solid var(--dlt-border) !important;
   border-radius: 0.75rem !important;
-  min-height: 4.25rem !important;
+  min-height: 3.75rem !important;
 }
 
 .pf-v5-c-form-control input:focus {
   border-color: var(--dlt-primary) !important;
-  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.3) !important;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2) !important;
 }
 
 /* 5. Primary Action Button */
 #kc-login.pf-v5-c-button.pf-m-primary {
   background-color: var(--dlt-primary) !important;
-  font-size: 1.5rem !important;
+  color: #ffffff !important;
+  font-size: 1.25rem !important;
   font-weight: 800 !important;
-  padding: 1.25rem 2rem !important;
+  padding: 1rem 2rem !important;
   border-radius: 0.75rem !important;
   border: none !important;
-  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.4) !important;
-  min-height: 4.5rem !important;
-  cursor: pointer !important;
+  box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2) !important;
+  min-height: 3.75rem !important;
+  width: 100% !important;
+  transition: all 0.2s ease !important;
 }
 
 #kc-login:hover {
   background-color: var(--dlt-primary-hover) !important;
-  transform: translateY(-2px) !important;
-  box-shadow: 0 20px 25px -5px rgba(16, 185, 129, 0.5) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.3) !important;
 }
 
 /* 6. SOCIAL PROVIDERS */
 #kc-social-providers ul {
-  display: flex !important;
-  flex-direction: column !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
   gap: 1rem !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  list-style: none !important;
 }
 
 #kc-social-providers a.pf-v5-c-button.pf-m-secondary {
-  justify-content: flex-start !important;
-  padding: 1rem 1.75rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.75rem !important;
   background-color: var(--dlt-card) !important;
-  border: 2.5px solid var(--dlt-border) !important;
+  border: 1.5px solid var(--dlt-border) !important;
   border-radius: 0.75rem !important;
   color: var(--dlt-foreground) !important;
-  font-weight: 700 !important;
-  font-size: 1.25rem !important;
-  min-height: 4.25rem !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  min-height: 3.5rem !important;
   text-decoration: none !important;
+  transition: all 0.2s ease !important;
 }
 
 #kc-social-providers a svg {
-  width: 32px !important;
-  height: 32px !important;
-  margin-right: 1.5rem !important;
+  width: 24px !important;
+  height: 24px !important;
+  margin-right: 0.75rem !important;
 }
 
 #kc-social-providers a:hover {
-  border-color: var(--dlt-primary) !important;
   background-color: var(--dlt-footer-bg) !important;
+  border-color: var(--dlt-primary) !important;
 }
 
-/* 7. Separator & Helper Links */
+/* 7. Footer Band & Links */
 .pf-v5-c-login__main-footer-band-item {
   width: 100% !important;
   text-align: center !important;
-  font-weight: 800 !important;
+  margin-bottom: 1.5rem !important;
   color: var(--dlt-muted) !important;
-  font-size: 1rem !important;
 }
 
 #kc-registration,
 .pf-v5-c-helper-text,
 .pf-v5-c-check__label {
-  font-size: 1.125rem !important;
-  font-weight: 700 !important;
+  font-size: 1rem !important;
   color: var(--dlt-muted) !important;
+  font-weight: 500 !important;
 }
 
 a,
 #kc-registration a,
-.pf-v5-c-helper-text__item-text a {
+.pf-v5-c-helper-text__item-text a,
+.pf-v5-c-login__main-footer-band-item a {
   color: var(--dlt-primary) !important;
   font-weight: 800 !important;
   text-decoration: none !important;
@@ -229,81 +271,34 @@ a:hover {
   text-decoration: underline !important;
 }
 
-/* 8. Password Toggle Icon Visibility */
+/* 8. UI Elements Polish */
 .pf-v5-c-button.pf-m-control {
   color: var(--dlt-muted) !important;
 }
 
-/* 9. Checkbox */
 .pf-v5-c-check__input {
-  width: 1.25rem !important;
-  height: 1.25rem !important;
+  width: 1.125rem !important;
+  height: 1.125rem !important;
+  border-color: var(--dlt-border) !important;
 }
 
-/* 10. Mobile Adjustments */
+hr {
+  border: 0;
+  border-top: 1px solid var(--dlt-border) !important;
+  margin: 2rem 0 !important;
+}
+
+/* 9. Mobile Adjustments */
 @media (max-width: 550px) {
   .pf-v5-c-login__main {
     border-radius: 0 !important;
     border: none !important;
     max-width: 100% !important;
   }
-}
-
-/* ==========================================================================
-   NUCLEAR DARK THEME OVERRIDES (Moved to bottom for specificity/cascade)
-   ========================================================================== */
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --dlt-background: #0c0a09;
-    --dlt-foreground: #fafaf9;
-    --dlt-card: #1c1917;
-    --dlt-card-foreground: #fafaf9;
-    --dlt-border: #44403c;
-    --dlt-muted: #a8a29e;
-    --dlt-footer-bg: #0c0a09;
-  }
-
-  body {
-    background-color: #0c0a09 !important;
-    color: #fafaf9 !important;
-  }
-
-  /* Aggressive contrast for system dark mode users */
-  #kc-page-title,
-  .pf-v5-c-title,
-  .pf-v5-c-form__label-text,
-  .pf-v5-c-login__main-footer-band-item,
-  .pf-v5-c-helper-text,
-  .pf-v5-c-check__label {
-    color: #fafaf9 !important;
-  }
-}
-
-.pf-v5-theme-dark,
-html.pf-v5-theme-dark,
-[data-theme="dark"] {
-  --dlt-background: #0c0a09;
-  --dlt-foreground: #fafaf9;
-  --dlt-card: #1c1917;
-  --dlt-card-foreground: #fafaf9;
-  --dlt-border: #44403c;
-  --dlt-muted: #a8a29e;
-  --dlt-footer-bg: #0c0a09;
-
-  /* Force PF5 variables */
-  --pf-v5-global--Color--100: #fafaf9 !important;
-  --pf-v5-global--primary-color--100: var(--dlt-primary) !important;
-  --pf-v5-global--link--Color: var(--dlt-primary) !important;
-  --pf-v5-global--BackgroundColor--100: var(--dlt-card) !important;
-
-  /* Aggressive contrast for class-triggered dark mode */
-  #kc-page-title,
-  .pf-v5-c-title,
-  .pf-v5-c-form__label-text,
-  .pf-v5-c-login__main-footer-band-item,
-  .pf-v5-c-helper-text,
-  .pf-v5-c-check__label {
-    color: #fafaf9 !important;
+  
+  .pf-v5-c-login__main-header,
+  .pf-v5-c-login__main-body,
+  .pf-v5-c-login__main-footer {
+    padding: 2rem !important;
   }
 }
