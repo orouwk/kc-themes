@@ -146,6 +146,10 @@ html.pf-v5-theme-dark body {
   margin-bottom: 2rem;
 }
 
+.pf-v5-c-brand {
+  text-transform: none;
+}
+
 #kc-page-title,
 .pf-v5-c-title {
   color: var(--dlt-foreground);
