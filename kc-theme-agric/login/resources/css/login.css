@@ -132,8 +132,6 @@ html.pf-v5-theme-dark body {
 }
 
 .pf-v5-c-login__main-footer {
-  padding-top: 2rem;
-  background-color: var(--dlt-footer-bg);
   border-top: 1px solid var(--dlt-border);
 }
 
@@ -178,18 +176,21 @@ html.pf-v5-theme-dark body {
 }
 
 .pf-v5-c-form-control input {
-  padding: 1rem 1.25rem;
-  font-size: 1.125rem;
+  padding: 0.5rem;
+  font-size: 1.5rem;
   color: var(--dlt-foreground);
   background-color: var(--dlt-card);
   border: 1.5px solid var(--dlt-border);
   border-radius: 0.75rem;
-  min-height: 3.75rem;
 }
 
 .pf-v5-c-form-control input:focus {
   border-color: var(--dlt-primary);
   box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+}
+
+.pf-v5-c-form__helper-text {
+  margin-block-start: 1rem;
 }
 
 /* 5. Primary Action Button */
@@ -254,7 +255,6 @@ html.pf-v5-theme-dark body {
 .pf-v5-c-login__main-footer-band-item {
   width: 100%;
   text-align: center;
-  margin-bottom: 1.5rem;
   color: var(--dlt-muted);
 }
 
