@@ -147,7 +147,7 @@ html.pf-v5-theme-dark body {
 }
 
 .pf-v5-c-brand {
-  text-transform: none;
+  text-transform: none !important;
 }
 
 #kc-page-title,
