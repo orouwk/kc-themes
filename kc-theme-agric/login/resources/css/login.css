@@ -300,6 +300,19 @@ hr {
   .pf-v5-c-login__main-header,
   .pf-v5-c-login__main-body,
   .pf-v5-c-login__main-footer {
-    padding: 2rem;
+    padding: 1rem;
+  }
+
+  .pf-v5-c-form {
+    --pf-v5-c-form--GridGap: 0.5rem;
+  }
+
+  .pf-v5-c-login__main-footer-band:first-child {
+    margin-block-start: 0.5rem;
+  }
+
+  .pf-v5-c-login__main-footer-band {
+    padding-block-end: 0.5rem;
+    padding-block-start: 0.5rem;
   }
 }
