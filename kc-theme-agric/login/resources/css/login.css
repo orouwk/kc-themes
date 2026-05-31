@@ -295,6 +295,7 @@ hr {
     border-radius: 0;
     border: none;
     max-width: 100%;
+    margin-bottom: 1rem;
   }
 
   .pf-v5-c-login__main-header,
@@ -307,6 +308,16 @@ hr {
     --pf-v5-c-form--GridGap: 0.5rem;
   }
 
+  .pf-v5-c-login__main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pf-v5-c-login__main-header > * {
+    width: auto;
+  }
+
   .pf-v5-c-login__main-footer-band:first-child {
     margin-block-start: 0.5rem;
   }
@@ -314,5 +325,10 @@ hr {
   .pf-v5-c-login__main-footer-band {
     padding-block-end: 0.5rem;
     padding-block-start: 0.5rem;
+  }
+
+  #kc-login.pf-v5-c-button.pf-m-primary { /* the element was button#kc-login */
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 }
