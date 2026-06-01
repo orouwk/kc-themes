@@ -1,24 +1,28 @@
 // Location detection and map support for AgriMarket
 window.addEventListener("load", () => {
-    const div = document.createElement("div");
 
-    div.style.position = "fixed";
-    div.style.top = "10px";
-    div.style.left = "10px";
-    div.style.background = "yellow";
-    div.style.padding = "10px";
-    div.style.zIndex = "9999";
-    div.style.color = "#0050CC";
+    const footer = document.querySelector('.pf-v5-c-login__main-footer');
+    if (footer) {
+      const dimensionDiv = document.createElement('div');
+      dimensionDiv.id = 'screen-dimensions-display';
+      dimensionDiv.style.padding = '10px';
+      dimensionDiv.style.textAlign = 'center';
+      dimensionDiv.style.fontSize = 'var(--pf-v5-global--FontSize--sm)';
+      dimensionDiv.style.color = 'var(--pf-v5-global--Color--200)';
+      
+      const updateDimensions = () => {
+        dimensionDiv.textContent = `Screen Dimensions: ${window.innerWidth} x ${window.innerHeight}`;
+      };
+      
+      footer.appendChild(dimensionDiv);
+      updateDimensions();
+      window.addEventListener('resize', updateDimensions);
+      
+      data = { success: true, message: "Screen dimensions added to footer." };
+    } else {
+      data = { success: false, message: "Footer not found." };
+    }
 
-    div.innerHTML = `
-        screen: ${screen.width}x${screen.height}<br>
-        viewport: ${window.innerWidth}x${window.innerHeight}<br>
-        dpr: ${window.devicePixelRatio}<br>
-        media(550): ${window.matchMedia("(max-width: 550px)").matches}
-        code: 2129
-    `;
-
-    document.body.appendChild(div);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
