@@ -8,6 +8,7 @@ window.addEventListener("load", () => {
     div.style.background = "yellow";
     div.style.padding = "10px";
     div.style.zIndex = "9999";
+    div.style.color = "#0050CC";
 
     div.innerHTML = `
         screen: ${screen.width}x${screen.height}<br>
