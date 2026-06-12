@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
       dimensionDiv.style.color = 'var(--pf-v5-global--Color--200)';
       
       const updateDimensions = () => {
-        dimensionDiv.textContent = `Screen Dimensions: ${window.innerWidth} x ${window.innerHeight}`;
+        dimensionDiv.textContent = `|<->| ${window.innerWidth} x ${window.innerHeight}`;
       };
       
       footer.appendChild(dimensionDiv);
