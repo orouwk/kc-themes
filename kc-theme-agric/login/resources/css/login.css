@@ -239,6 +239,10 @@ html.pf-v5-theme-dark body {
   margin-right: 0.75rem;
 }
 
+#kc-social-providers a svg.apple {
+  fill: currentColor;
+}
+
 #kc-social-providers a:hover {
   background-color: var(--dlt-footer-bg);
   border-color: var(--dlt-primary);

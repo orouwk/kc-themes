@@ -13,15 +13,7 @@ Read [cicd.semver-protocol.md](../dlt-codex/protocols/cicd.semver-protocol.md) f
 
 ### Added
 
-- _(List new features here)_
-
-### Changed
-
-- Improve layout with social buttons
-
-### Fixed
-
-- _(List any bug fixes here)_
+- Add official Apple SVG icon and typography alignment for Sign in with Apple button in custom login theme.
 
 ## [0.1.0] - 2026-02-16
 
